@@ -1,0 +1,46 @@
+﻿<Window x:Class="DoYourHomework.HomeworkTime"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoYourHomework"
+        mc:Ignorable="d"
+        Closing="Window_Closing" Loaded="Window_Loaded" AllowsTransparency="True"
+        Title="HomeworkTime" Height="768" Width="1360" ResizeMode="NoResize" WindowStyle="None">
+    <Grid>
+        <Grid x:Name="BackgroundGrid">
+            <Grid.Effect>
+                <BlurEffect Radius="40"/>
+            </Grid.Effect>
+        </Grid>
+        <Grid Background="#7F000000">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="34*"/>
+                <RowDefinition Height="37*"/>
+                <RowDefinition Height="97*"/>
+                <RowDefinition Height="88*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="HomeworkTimeHint" Text="作业时间"
+                   FontSize="60" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="560,0,560,290" Grid.Row="1" Grid.RowSpan="2" Height="76" Width="240"/>
+            <TextBlock x:Name="Time" FontSize="50" Foreground="White" FontWeight="Bold"
+                       Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="573,30,573,0" Height="63" Width="214">00:00:00</TextBlock>
+            <Button x:Name="OvertimeButton" Foreground="White" Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Center"
+                    VerticalAlignment="Top" Grid.Row="3" Background="{x:Null}" BorderBrush="{x:Null}"
+                    Height="50" Width="200" Click="Overtime_Click" Margin="580,0">
+                <TextBlock x:Name="OvertimeHint" FontSize="30">加时</TextBlock>
+            </Button>
+            <TextBlock x:Name="OvertimeText" Opacity="0"
+                       FontFamily="pack://application:,,,/Font/#Koverwatch" Grid.Row="1" FontSize="50"
+                       FontStyle="Italic" HorizontalAlignment="Center" Width="134" Margin="613,0">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="#FFFDDC0D" BlurRadius="30" Direction="0" ShadowDepth="0"/>
+                </TextBlock.Effect>
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#7FFFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>Overtime</TextBlock>
+        </Grid>
+    </Grid>
+</Window>
